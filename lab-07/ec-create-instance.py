@@ -2,6 +2,10 @@ import boto3
 
 
 def create_instance():
+    provider "aws" {
+  region = "us-east-1"
+
+}
     ec2_resource = boto3.resource('ec2')
     instances = ec2_resource.create_instances(ImageId='ami-6871a115',
                 MinCount=1, MaxCount=3,InstanceType='t2.micro',
