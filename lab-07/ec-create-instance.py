@@ -3,9 +3,9 @@ import boto3
 
 def create_instance():
     ec2_resource = boto3.resource('ec2')
-    instances = ec2_resource.create_instances(ImageId='ami-6871a115',
+    instances = ec2_resource.create_instances(ImageId='ami-04169656fea786776',
                 MinCount=1, MaxCount=3,InstanceType='t2.micro',
-                SecurityGroupIds=['launch-wizard-5'],KeyName='fullstack')
+                SecurityGroupIds=['launch-wizard-15'],KeyName='fullstack')
     instance_ids = []
     for instance in instances:
         instance_ids.append(instance.id)
